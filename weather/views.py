@@ -12,7 +12,10 @@ def index(request, city_name=None):
     if request.method == "POST":
         form = CityForm(request.POST)
         if form.is_valid():
+            new_city = form.save(commit=False)
+            new_city.name = new_city.name.lower()
             form.save()
+            cities = [new_city]
     else:
         form = CityForm()
 
