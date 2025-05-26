@@ -7,3 +7,8 @@ class CityForm(ModelForm):
         model = City
         fields = ['name']
         widgets = {'name': TextInput(attrs={'class': 'form-control', 'id': 'city', 'placeholder': 'Введите город'})}
+
+    def clean_name(self):
+        name = self.cleaned_data["name"]
+        return name.lower()
+    
