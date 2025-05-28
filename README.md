@@ -24,3 +24,10 @@ venv\Script\activate
 ```bash
 docker-compose up --build
 ```
+
+### Приложение прогноз погоды доступно по этому url и его api
+
+```
+http://127.0.0.1:8000
+http://127.0.0.1:8000/api/city
+```
